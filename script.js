@@ -1,3 +1,4 @@
+//Global Variables
 let map;
 let currentIndex = 0;
 let score = 0;
@@ -11,7 +12,7 @@ document.getElementById("resetButton").addEventListener("click", function() {
     location.reload();
 });
 
-//WHERE THE MAP IS CENTERED AT
+//WHERE THE MAP IS CENTERED AT WITH THE LOCATIONS I CHOSE
 function wholeMap() {
 const schoolCenter = { 
     lat: 34.23761953544939,
@@ -38,7 +39,7 @@ const schoolCenter = {
 infoPop = new google.maps.InfoWindow();
 
 showQ();
-
+//DOUBLE CLICK
 map.addListener("dblclick", function(e){
     theClick(e.latLng);
 });
@@ -92,20 +93,20 @@ const places = [
         }
     }
 ];
-
+//DISPLAY CURRENT QUESTION
 function showQ(){
     const curQ = document.getElementById("currentQ");
     const mess = document.getElementById("message");
-
+    //IF THIS IS OPEN CLOSE THE INFOPOP
     if (infoPop) {
         infoPop.close();
     }
-
+    //REMOVE THE PREV RECTANGLE FROM MAP
     if (currentRect){
         currentRect.setMap(null);
         currentRect = null;
     }
-
+    //SHOW NEXT LOCATION QUESTION
     if (currentIndex < places.length) {
         const loca = places[currentIndex];
         curQ.textContent = "Where is " + loca.place + " ?";
@@ -115,7 +116,7 @@ function showQ(){
         mess.textContent = "SCORE = " + score + "/" + places.length;
     }
 }
-
+//IF QUESTIONS ARE FINISHED STOP
 function theClick(coordinates) {
     if(currentIndex >= places.length){
         return;
@@ -123,13 +124,13 @@ function theClick(coordinates) {
 
     const loca = places[currentIndex];
     const bounds = loca.bounds;
-
+//IS POINT INSIDE CORRECT BOUNDS?
     const inBounds =
     coordinates.lat() <= bounds.north &&
     coordinates.lat() >= bounds.south &&
     coordinates.lng() <= bounds.east &&
     coordinates.lng() >= bounds.west;
-
+    //RIGHT OR WRONG DISPLAY
     const mess = document.getElementById("message");
     //MY SECOND MAPS COMPONENT
     if(inBounds) {
@@ -154,7 +155,7 @@ function theClick(coordinates) {
     if (currentRect) {
     currentRect.setMap(null);
   }
-
+    //COLOR OF THE RECTANGLES
     currentRect = new google.maps.Rectangle({
     strokeColor: inBounds ? "#000000ff" : "#000000ff",
     strokeOpacity: 50, strokeWeight: 2,
