@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel = "stylesheet" href = "styles.css">
+
+
+    <title>Project 4 - Leopoldo Martinez</title>
+</head>
+<body>
+    <div class = "title">
+        <h1>CSUN GOOGLE MAPS GAME</h1>
+    </div>
+
+    <div class = "questionBanner">
+        <h1>SELECT WHERE THE GIVEN LOCATION IS AT? </br>
+        (TO SELECT DOUBLE CLICK)</h1>
+    </div>
+    
+
+    <div id = "currentQ" class = "infoText"></div>
+
+    <div id = "message" class = "infoText"></div>
+
+    <button id = "resetButton" class ="resetButton"> Reset Game</button>
+
+  
+    <!-- <button class = "gameButton">START</button> -->
+
+    <div class = "mapBox" id="map"></div>
+    <!--Locations 
+    1.Kurland Lecture Hall—E1 (My Assigned Location)
+    2.Manzanita Hall
+    3.Live Oak Hall
+    4.Eucalyptus Hall
+    5.Sierra Hall
+    -->
+    <script src ="script.js"></script>
+    <script async 
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCUMFnbeVBit_EqwbHKlnXQcHElLE0urLE&callback=wholeMap">
+    </script>
+
+
+</body>
+</html>

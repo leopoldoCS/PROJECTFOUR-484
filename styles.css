@@ -1,0 +1,46 @@
+body{
+    background-color: rgba(251, 4, 4, 0.954);
+}
+
+.title{
+    font-size: 30px;
+    text-align: center;
+    color:white;
+    font-style:oblique;
+}
+
+.questionBanner{
+    color:white;
+    font-style:oblique;
+}
+
+.mapBox{
+    border: 10px solid white;
+    height: 70vh;
+    width: 45vw;
+    color:white;
+    float:right;
+    margin-right:100px;
+}
+.infoText {
+    
+    font-size: 50px;
+    font-style:italic;
+    color:white;
+}
+
+.resetButton{
+    border: 5px solid white;
+    height:100px;
+    width:200px;
+    font-size:35px;
+    margin-top:10px;
+}
+.resetButton:hover{
+    border: 5px solid black;
+}
+
+.gm-style, .gm-style-iw,
+.gm-style, .gm-style-iw * {
+    color:rgb(2, 2, 2) !important;
+}
