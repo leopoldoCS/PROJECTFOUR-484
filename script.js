@@ -131,7 +131,7 @@ function theClick(coordinates) {
     coordinates.lng() >= bounds.west;
 
     const mess = document.getElementById("message");
-
+    //MY SECOND MAPS COMPONENT
     if(inBounds) {
         score++;
         mess.textContent = "Correct";
@@ -142,7 +142,7 @@ function theClick(coordinates) {
     if(guessPoint) {
         guessPoint.setMap(null);
     }
-
+    //MY SECOND MAPS COMPONENT
     guessPoint = new google.maps.Marker ({
         position: coordinates,
         map: map
